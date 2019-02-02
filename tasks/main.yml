@@ -7,13 +7,13 @@
 
 - include_tasks: "apache_exporter.yml"
   when:  exporter_name == 'apache'
-    
+
 - include_tasks: "mongodb_exporter.yml"
   when:  exporter_name == 'mongodb'
 
 - include_tasks: "nginx_exporter.yml"
   when:  exporter_name == 'nginx'
-    
+
 - include_tasks: "elasticsearch_exporter.yml"
   when: exporter_name == 'elasticsearch'
 

@@ -4,16 +4,20 @@
     name: prom
     shell: /sbin/nologin
 
+- name: Setting internal variables for convinience
+  set_fact:
+    base_url: "https://github.com/Lusitaniae/apache_exporter/releases/download"
+
 - name: Downloading and unarchiving the Apache Exporter
   unarchive:
-    src: "https://github.com/Lusitaniae/apache_exporter/releases/download/v{{ apache_exporter_version }}/apache_exporter-{{ apache_exporter_version }}.linux-amd64.tar.gz"
+    src: "{{ base_url }}/v{{ apache_exporter }}/apache_exporter-{{ apache_exporter }}.linux-amd64.tar.gz"
     dest: /tmp
     remote_src: yes
     mode: 0755
 
 - name: Copy apache-exporter binary to appropriate path
   copy:
-    src: /tmp/apache_exporter-{{ apache_exporter_version }}.linux-amd64/apache_exporter
+    src: /tmp/apache_exporter-{{ apache_exporter }}.linux-amd64/apache_exporter
     dest: /usr/local/bin/
     remote_src: yes
     mode: 0555

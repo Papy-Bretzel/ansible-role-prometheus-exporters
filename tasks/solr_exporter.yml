@@ -8,10 +8,18 @@
   yum:
     name: unzip
     state: present
+  register: task_result
+  until: task_result is succeeded
+  retries: 5
+  delay: 5
+
+- name: Setting internal variables for convinience
+  set_fact:
+    base_url: "https://github.com/mosuka/solr-exporter/releases/download"
 
 - name: Download and unarchive the solr exporter
   unarchive:
-    src: "https://github.com/mosuka/solr-exporter/releases/download/{{ solr_exporter_version }}/solr-exporter-{{ solr_exporter_version }}-bin.zip"
+    src: "{{ base_url }}/{{ solr_exporter_version }}/solr-exporter-{{ solr_exporter_version }}-bin.zip"
     dest: "/opt/"
     remote_src: yes
     mode: 0755

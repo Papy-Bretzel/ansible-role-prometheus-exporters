@@ -5,9 +5,13 @@
     name: prom
     shell: /sbin/nologin
 
+- name: Setting internal variables for convinience
+  set_fact:
+    base_url: "https://github.com/dcu/mongodb_exporter/releases/download"
+
 - name: Downloading and unarchiving the MongoDB Exporter
   get_url:
-    url: "https://github.com/dcu/mongodb_exporter/releases/download/v{{ mongodb_exporter }}/mongodb_exporter-linux-amd64"
+    url: "{{ base_url }}/v{{ mongodb_exporter }}/mongodb_exporter-linux-amd64"
     dest: /tmp
     remote_src: yes
     mode: 0755

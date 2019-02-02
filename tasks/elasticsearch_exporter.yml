@@ -4,16 +4,20 @@
     name: prom
     shell: /sbin/nologin
 
+- name: Setting internal variables for convinience
+  set_fact:
+    base_url: "https://github.com/justwatchcom/elasticsearch_exporter/releases/download"
+
 - name: Downloading and unarchiving the Elasticsearch Exporter
   unarchive:
-    src: "https://github.com/justwatchcom/elasticsearch_exporter/releases/download/v{{ elasticsearch_exporter_version }}/elasticsearch_exporter-{{ elasticsearch_exporter_version }}.linux-amd64.tar.gz"
+    src: "{{ base_url }}/v{{ es_exporter }}/elasticsearch_exporter-{{ es_exporter }}.linux-amd64.tar.gz"
     dest: /tmp
     remote_src: yes
     mode: 0755
 
 - name: Copy elasticsearch-exporter to appropriate path
   copy:
-    src: "/tmp/elasticsearch_exporter-{{ elasticsearch_exporter_version }}.linux-amd64/elasticsearch_exporter"
+    src: "/tmp/elasticsearch_exporter-{{ es_exporter }}.linux-amd64/elasticsearch_exporter"
     dest: /usr/local/bin/
     remote_src: yes
     mode: 0555
