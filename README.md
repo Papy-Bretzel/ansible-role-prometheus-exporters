@@ -31,28 +31,28 @@ location / {
 
 |**Variables**| **Default Values**| **Description**|
 |----------|---------|---------------|
-|prometheus_mysqld_exporter_env |'user:password@(hostname:port)/'|User, password, host and port for mysql-exporter|
-|es_url | localhost | Server IP of Elasticsearch|
-|es_port | 9200 | Port on which elasticsearch is listening|
-|kafka_ip | localhost | IP of the Kafka Server|
-|kafka_port | 9092 | Port number on which kafka is running|
-|nginx_ip | localhost | Server IP of nginx|
-|nginx_port | 80 | Port number on which nginx is running|
-|solr_ip | localhost | Server IP of the Solr server|
-|solr_port | 8983 | Port number on which Solr is listening|
+|**prometheus_mysqld_exporter_env** |'user:password@(hostname:port)/'|User, password, host and port for mysql-exporter|
+|**es_url** | localhost | Server IP of Elasticsearch|
+|**es_port** | 9200 | Port on which elasticsearch is listening|
+|**kafka_ip** | localhost | IP of the Kafka Server|
+|**kafka_port** | 9092 | Port number on which kafka is running|
+|**nginx_ip** | localhost | Server IP of nginx|
+|**nginx_port** | 80 | Port number on which nginx is running|
+|**solr_ip** | localhost | Server IP of the Solr server|
+|**solr_port** | 8983 | Port number on which Solr is listening|
 
 ### Optional Variables
 
 |**Variables**| **Default Values**| **Description**|
 |--------------|-------------|-------------------|
-|node_exporter_version | 0.17.0 | Version of Node Exporter|
-|solr_exporter_version | 0.3.9 | Version of Solr Exporter|
-|apache_exporter_version | 0.5.0 | Version of Apache Exporter|
-|elasticsearch_exporter_version | 1.0.2 | Version of Elasticsearch Exporter|
-|mongodb_exporter | 1.0.0 | Version of MongoDB Exporter|
-|nginx_exporter_version | 0.2.0 | Version of Nginx Exporter|
-|kafka_exporter_version | 1.2.0 | Version of Kafka Exporter|
-|mysql_exporter_version | 0.11.0 | Version of MySQL Exporter|
+|**node_exporter_version** | 0.17.0 | Version of Node Exporter|
+|**solr_exporter_version** | 0.3.9 | Version of Solr Exporter|
+|**apache_exporter** | 0.5.0 | Version of Apache Exporter|
+|**es_exporter** | 1.0.2 | Version of Elasticsearch Exporter|
+|**mongodb_exporter** | 1.0.0 | Version of MongoDB Exporter|
+|**nginx_exporter** | 0.2.0 | Version of Nginx Exporter|
+|**kafka_exporter_version** | 1.2.0 | Version of Kafka Exporter|
+|**mysql_exporter_version** | 0.11.0 | Version of MySQL Exporter|
 
 ## Dependencies
 None :-)
