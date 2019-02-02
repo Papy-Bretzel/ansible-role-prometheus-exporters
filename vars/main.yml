@@ -11,10 +11,10 @@ solr_ip: "localhost"
 solr_port: "8983"
 
 #### Variables for Apache Exporter ####
-apache_exporter_version: "0.5.0"
+apache_exporter: "0.5.0"
 
 #### Variables for Elasticsearch Exporter ####
-elasticsearch_exporter_version: "1.0.2"
+es_exporter: "1.0.2"
 es_url: "localhost"
 es_port: "9200"
 
@@ -22,7 +22,7 @@ es_port: "9200"
 mongodb_exporter: "1.0.0"
 
 #### Variables for Nginx Exporter ####
-nginx_exporter_version: "0.2.0"
+nginx_exporter: "0.2.0"
 nginx_ip: "localhost"
 nginx_port: "80"
 
