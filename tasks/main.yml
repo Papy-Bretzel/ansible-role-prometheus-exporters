@@ -1,24 +1,24 @@
 ---
 - include_tasks: "node_exporter.yml"
-  when:  exporter_name == 'node'
+  when:  'node' in exporter_name
 
 - include_tasks: "mysql_exporter.yml"
-  when:  exporter_name == 'mysql'
+  when:  'mysql' in exporter_name
 
 - include_tasks: "apache_exporter.yml"
-  when:  exporter_name == 'apache'
+  when:  'apache' in exporter_name
 
 - include_tasks: "mongodb_exporter.yml"
-  when:  exporter_name == 'mongodb'
+  when:  'mongodb' in exporter_name
 
 - include_tasks: "nginx_exporter.yml"
-  when:  exporter_name == 'nginx'
+  when:  'nginx' in exporter_name
 
 - include_tasks: "elasticsearch_exporter.yml"
-  when: exporter_name == 'elasticsearch'
+  when: 'elasticsearch'  in exporter_name
 
 - include_tasks: "kafka_exporter.yml"
-  when: exporter_name == 'kafka'
+  when: 'kafka' in exporter_name
 
 - include_tasks: "solr_exporter.yml"
-  when: exporter_name == 'solr'
+  when: 'solr'  in exporter_name
